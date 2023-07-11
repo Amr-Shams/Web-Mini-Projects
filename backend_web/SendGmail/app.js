@@ -18,7 +18,7 @@ const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 const SendMailRouter = require('./router/sendmail');
 
-
+app.use(express.static('./public'));
 app.use(limiter);
 app.trustProxy = true;
 app.use(morgan('tiny'));
