@@ -13,6 +13,7 @@ const {
 // show all users
 const getAllUsers = asyncHandler(async (req, res) => {
     const users = await User.find({});
+    res.send("Fuck you")
     res.status(StatusCodes.OK).json({ users });
 });
 // show a single user
