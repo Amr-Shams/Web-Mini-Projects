@@ -11,7 +11,7 @@ async function handleUpload(req, res) {
     // Get the path to the Python script
     const pythonPath = path.join(__dirname, 'python_scripts', 'convert.py');
 
-    const python = spawn('conda', ['run', '-n', 'base', '/Users/amraly/anaconda3/bin/python', pythonPath, req.file.buffer.toString('base64')]);
+    const python = spawn('conda', ['run', '-n', 'base', '/Users/amraly/anaconda3/bin/python', pythonPath, req.file.buffer.toString('utf8')]);
   
     let output = '';
     python.stdout.on('data', (data) => {
